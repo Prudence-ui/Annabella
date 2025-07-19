@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie privée - Photos & Vidéos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: black;
+      text-align: center;
+      color: white;
+
+    }
+    .gallery img {
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    .gallery video {
+      max-width: 500px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    // Empêcher clic droit (souris)
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    }, false);
+
+    // Empêcher drag & drop
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+    }, false);
+  </script>
+</head>
+<body>
+  <h1>🎉 Bienvenue dans la galerie privée !</h1>
+  <p>Une vidéo est ajoutée à la gallerie chaque semaine</p>
+
+  <div class="gallery">
+    <!-- Exemple de photos -->
+    <img src="./assets/img/prudo.jpg" alt="Photo 1">
+    <img src="./assets/img/prudo1.jpg" alt="Photo 2">
+    <img src="./assets/img/prudo2.jpg" alt="Photo 3">
+    <img src="./assets/img/prudo3.jpg" alt="Photo 4">
+    <img src="./assets/img/prudo4.jpg" alt="Photo 5">
+    <img src="./assets/img/prudo5.jpg" alt="Photo 6">
+    <img src="./assets/img/prudo7.jpg" alt="Photo 8">
+    <img src="./assets/img/prudo8.jpg" alt="Photo 9">
+    <img src="./assets/img/prudo9.jpg" alt="Photo 10">
+    <img src="./assets/img/prudo10.jpg" alt="Photo 11">
+    <img src="./assets/img/prudo11.jpg" alt="Photo 12">
+    <img src="./assets/img/prudo12.jpg" alt="Photo 13"> 
+
+
+    <!-- Exemple de vidéos -->
+    <video controls controlsList="nodownload">
+      <source src="./assets/videos/video.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <video controls controlsList="nodownload">
+      <source src="./assets/videos/video1.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+   <video controls controlsList="nodownload">
+      <source src="./assets/videos/video2.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <video controls controlsList="nodownload">
+      <source src="./assets/videos/video3.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+     <video controls controlsList="nodownload">
+      <source src="./assets/videos/video4.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+     <video controls controlsList="nodownload">
+      <source src="./assets/videos/nature.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+   
+  </div>
+</body>
+</html>
+  

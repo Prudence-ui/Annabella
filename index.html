@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paiement - Accès à la galerie privée</title>
+  <style>
+
+    body {
+     
+      background-image: url('./assets/img/fondecran.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      height: 100vh;
+      margin: 0;
+
+
+
+      
+
+
+    }
+
+    .centered {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 30vh
+                  
+
+    }
+
+    .btn-interesse {
+            background-color: blue; /* Vert */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+           }
+
+    
+
+    
+  </style>
+  <script src="https://cdn.fedapay.com/checkout.js"></script>
+</head>
+<body class="body">
+
+
+
+
+  
+    <div class="centered">
+
+        <h1>Galerie privée (photos & vidéos)</h1>
+
+
+    </div>
+
+    <div class="centered">
+
+        <button id="pay-btn" class="btn-interesse">Accès à la galerie</button>
+
+
+    </div>
+
+
+    <script>
+    document.getElementById('pay-btn').addEventListener('click', function () {
+      var payment = FedaPay.init({
+        public_key: 'pk_live_McGxiTj5lNJ7MPzCb_qDx-lW', // Remplace par ta clé publique FedaPay
+        transaction: {
+          amount: 100, // Montant en FCFA
+          description: 'Paiement simple par carte',
+          currency: { iso: 'XOF' }
+        },
+        onComplete: function (transaction) {
+         console.log("Transaction:",transaction.transaction.status);
+          if (transaction.transaction.status == 'approved') {
+            alert('Paiement effectué')
+            // Redirection après paiement réussi
+            window.location.href ='galerie.html';
+           return true;
+
+          } else {
+            alert('Le paiement n’a pas été validé.');
+          }
+        }
+      });
+           
+
+      payment.open();
+    });
+  </script>
+
+
+  
+       
+</body>
+</html>
