@@ -100,7 +100,7 @@
         const PRICE_EUR = 19.99; // Prix affiché en €
         const XOF_PER_EUR = 656; // Taux fixe BCEAO
         const AMOUNT_XOF = PRICE_EUR * XOF_PER_EUR; // Conversion en XOF
-        const REDIRECT_URL = "formation.html"; // Page après paiement
+        const REDIRECT_URL = "gallerie.html"; // Page après paiement
 
         document.getElementById('btn-payer').addEventListener('click', () => {
             openKkiapayWidget({
@@ -114,7 +114,7 @@
 
         addSuccessListener(response => {
             console.log("Paiement réussi :", response);
-            window.location.href = REDIRECT_URL;
+            window.location.href = "gallerie.html";
         });
 
         addFailureListener(error => {
