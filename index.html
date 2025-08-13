@@ -47,6 +47,23 @@
             display: inline-block;
            }
 
+    .btn-pay {
+            background-color: #0b84ff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            }
+            .btn-pay:hover {
+                background-color: #086cd6;
+            }
+
+    .prix {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
     
 
     
@@ -61,48 +78,52 @@
   
     <div class="centered">
 
-        <h1>Galerie privée (photos & vidéos)</h1>
+        <h1>My private gallery (photos & videos)🔞</h1>
 
 
     </div>
 
-    <div class="centered">
+    <!-- Bouton payer -->
 
-        <button id="pay-btn" class="btn-interesse">Accès à la galerie</button>
+      <div class="centered">
 
-
-    </div>
-
-
-    <script>
-    document.getElementById('pay-btn').addEventListener('click', function () {
-      var payment = FedaPay.init({
-        public_key: 'pk_live_McGxiTj5lNJ7MPzCb_qDx-lW', // Remplace par ta clé publique FedaPay
-        transaction: {
-          amount: 100, // Montant en FCFA
-          description: 'Paiement simple par carte',
-          currency: { iso: 'XOF' }
-        },
-        onComplete: function (transaction) {
-         console.log("Transaction:",transaction.transaction.status);
-          if (transaction.transaction.status == 'approved') {
-            alert('Paiement effectué')
-            // Redirection après paiement réussi
-            window.location.href ='gallerie.html';
-           return true;
-
-          } else {
-            alert('Le paiement n’a pas été validé.');
-          }
-        }
-      });
-           
-
-      payment.open();
-    });
-  </script>
+            <button class="btn-pay" id="btn-payer">See the gallery 19.99€</button>
 
 
+
+      </div>
+
+    <!-- Script Kkiapay -->
+    <script src="https://cdn.kkiapay.me/k.js"></script>
+     <script>
+        const PUBLIC_KEY = "4a4b987d7db09a83dadbc72380c47939c21cdc97"; // Clé publique KKIAPAY
+        const PRICE_EUR = 19.99; // Prix affiché en €
+        const XOF_PER_EUR = 656; // Taux fixe BCEAO
+        const AMOUNT_XOF = PRICE_EUR * XOF_PER_EUR; // Conversion en XOF
+        const REDIRECT_URL = "formation.html"; // Page après paiement
+
+        document.getElementById('btn-payer').addEventListener('click', () => {
+            openKkiapayWidget({
+                amount: AMOUNT_XOF,
+                position: "center",
+                key: PUBLIC_KEY,
+                paymentmethod: "card", // Seulement paiement par carte
+                sandbox: false // Mettre true pour tester
+            });
+        });
+
+        addSuccessListener(response => {
+            console.log("Paiement réussi :", response);
+            window.location.href = REDIRECT_URL;
+        });
+
+        addFailureListener(error => {
+            console.error("Paiement échoué :", error);
+            alert("Le paiement a échoué. Veuillez réessayer.");
+        });
+    </script>
+
+          
   
        
 </body>
