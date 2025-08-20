@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Paiement - Accès à la galerie privée</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formation TikTok - Gagne 50€/jour</title>
   <style>
-
     body {
-     
-      background-image: url('./assets/img/fondecran.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-      color: white;
       font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
       text-align: center;
-      padding-top: 100px;
-      height: 100vh;
-      margin: 0;
-
-
-
-      
-
-
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #1a1a1a;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #1dbf73;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #17a361;
+    }
+    img.profile {
+      max-width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    img.proof {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
     }
 
     .centered {
@@ -31,21 +59,7 @@
                   justify-content: center;
                   align-items: center;
                   height: 30vh
-                  
-
     }
-
-    .btn-interesse {
-            background-color: blue; /* Vert */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-           }
 
     .btn-pay {
             background-color: #0b84ff;
@@ -60,44 +74,31 @@
                 background-color: #086cd6;
             }
 
-    .prix {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-    
-
-    
   </style>
-  <script src="https://cdn.fedapay.com/checkout.js"></script>
 </head>
-<body class="body">
-
-
-
-
-  
-    <div class="centered">
-
-        <h1>My private gallery (photos & videos)🔞</h1>
-
-
-    </div>
+<body>
+  <div class="container">
+    <img src="./assets/img/elle.jpg" alt="Photo de Prudence" class="profile">
+    <h1>🔞 YOU WILL EJACULATE IN LESS THAN A MINUTE</h1>
 
     <!-- Bouton payer -->
 
       <div class="centered">
 
-            <button class="btn-pay" id="btn-payer">See the gallery 19.99€</button>
+            <button class="btn-pay" id="btn-payer">Visit my private gallery 9.99€</button>
 
 
 
       </div>
+  </div>
+
+  
 
     <!-- Script Kkiapay -->
     <script src="https://cdn.kkiapay.me/k.js"></script>
      <script>
         const PUBLIC_KEY = "4a4b987d7db09a83dadbc72380c47939c21cdc97"; // Clé publique KKIAPAY
-        const PRICE_EUR = 19.99; // Prix affiché en €
+        const PRICE_EUR = 9.99; // Prix affiché en €
         const XOF_PER_EUR = 656; // Taux fixe BCEAO
         const AMOUNT_XOF = PRICE_EUR * XOF_PER_EUR; // Conversion en XOF
         const REDIRECT_URL = "gallerie.html"; // Page après paiement
@@ -124,7 +125,5 @@
     </script>
 
           
-  
-       
-</body>
-</html>
+
+      <p><strong> Copyright@.2025.Annabella.Naked </strong></p>
